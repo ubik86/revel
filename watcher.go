@@ -55,42 +55,29 @@ func (w *Watcher) Listen(listener Listener, roots ...string) {
 
 	// Walk through all files / directories under the root, adding each to watcher.
 	for _, p := range roots {
-		fi, err := os.Stat(p)
-		if err != nil {
-			ERROR.Println("Failed to stat watched path", p, ":", err)
-			continue
-		}
-
-		// If it is a file, watch that specific file.
-		if !fi.IsDir() {
-			err = watcher.Watch(p)
-			if err != nil {
-				ERROR.Println("Failed to watch", p, ":", err)
-			}
-			TRACE.Println("Watching:", p)
-			continue
-		}
-
-		// Else, walk the directory tree.
 		filepath.Walk(p, func(path string, info os.FileInfo, err error) error {
 			if err != nil {
 				ERROR.Println("Error walking path:", err)
 				return nil
 			}
 
-			if info.IsDir() {
-				if dl, ok := listener.(DiscerningListener); ok {
+			if dl, ok := listener.(DiscerningListener); ok {
+				if info.IsDir() {
 					if !dl.WatchDir(info) {
 						return filepath.SkipDir
 					}
+				} else {
+					if !dl.WatchFile(info.Name()) {
+						return nil
+					}
 				}
-
-				err = watcher.Watch(path)
-				if err != nil {
-					ERROR.Println("Failed to watch", path, ":", err)
-				}
-				TRACE.Println("Watching:", path)
 			}
+
+			err = watcher.Watch(path)
+			if err != nil {
+				ERROR.Println("Failed to watch", path, ":", err)
+			}
+
 			return nil
 		})
 	}
@@ -110,6 +97,7 @@ func (w *Watcher) Notify() *Error {
 		for {
 			select {
 			case ev := <-watcher.Event:
+				TRACE.Println(ev)
 				// Ignore changes to dotfiles.
 				if !strings.HasPrefix(path.Base(ev.Name), ".") {
 					if dl, ok := listener.(DiscerningListener); ok {
@@ -121,7 +109,8 @@ func (w *Watcher) Notify() *Error {
 					refresh = true
 				}
 				continue
-			case <-watcher.Error:
+			case err := <-watcher.Error:
+				TRACE.Println(err)
 				continue
 			default:
 				// No events left to pull
