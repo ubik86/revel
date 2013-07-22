@@ -1,8 +1,8 @@
 {{set . "title" "Chat room"}}
 {{template "header.html" .}}
 
-<h1>WebSocket — You are now chatting as {{.user}}
-  <a href="/">Leave the chat room</a></h1>
+<h1>Zalogowano jako {{.user}}
+  <a href="/">Opuść czat</a></h1>
 
 <div id="thread">
   <script type="text/html" id="message_tmpl">
@@ -18,7 +18,7 @@
       <div class="message notice">
         <h2></h2>
         <p>
-          <%= event.User %> joined the room
+          <%= event.User %> dołączył(a) do czata
         </p>
       </div>
     <% } %>
@@ -26,7 +26,7 @@
       <div class="message notice">
         <h2></h2>
         <p>
-          <%= event.User %> left the room
+          <%= event.User %> opuścił(a) czat
         </p>
       </div>
     <% } %>
@@ -34,7 +34,7 @@
       <div class="message important">
         <h2></h2>
         <p>
-          You are now disconnected!
+          Zostałeś rozłączony
         </p>
       </div>
     <% } %>
@@ -43,7 +43,7 @@
 
 <div id="newMessage">
   <input type="text" id="message" autocomplete="off" autofocus>
-  <input type="submit" value="send" id="send">
+  <input type="submit" value="wyślij" id="send">
 </div>
 
 <script type="text/javascript">

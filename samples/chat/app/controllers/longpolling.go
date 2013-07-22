@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/robfig/revel"
-	"github.com/robfig/revel/samples/chat/app/chatroom"
+	"github.com/ubik86/revel"
+	"github.com/ubik86/revel/samples/chat/app/chatroom"
 )
 
 type LongPolling struct {

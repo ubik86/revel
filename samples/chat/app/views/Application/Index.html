@@ -3,7 +3,7 @@
 
 <div id="home">
 
-  <h2>The Chat demonstration (from Play!)</h2>
+  <h2>Zapytaj eksperta firmy</h2>
 
   <div id="signin">
     <form action="{{url "Application.EnterDemo"}}">
@@ -13,21 +13,18 @@
         </p>
       {{end}}
       <p>
-        <label for="nick">Choose a nick name</label>
+        <label for="nick">Podaj swoje imię (nick)</label>
         <input type="text" name="user" id="user">
       </p>
-      <p>
-        <label for="nick">Demonstration</label>
+      <p style="display:none">
+        <label for="nick">Połączenie</label>
         <select name="demo">
-          <option></option>
-          <option value="refresh">Ajax, active refresh</option>
-          <option value="longpolling">Ajax, long polling</option>
           <option value="websocket">WebSocket</option>
         </select>
       </p>
       <p>
         <label></label>
-        <input type="submit" id="enter" value="Enter the chat room">
+        <input type="submit" id="enter" value="Start">
       </p>
     </form>
   </div>
