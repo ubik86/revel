@@ -2,9 +2,9 @@ package controllers
 
 import (
 	"code.google.com/p/go.crypto/bcrypt"
-	"github.com/robfig/revel"
-	"github.com/robfig/revel/samples/booking/app/models"
-	"github.com/robfig/revel/samples/booking/app/routes"
+	"github.com/ubik86/revel"
+	"github.com/ubik86/revel/samples/booking/app/models"
+	"github.com/ubik86/revel/samples/booking/app/routes"
 )
 
 type Application struct {

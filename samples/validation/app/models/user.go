@@ -1,6 +1,6 @@
 package models
 
-import "github.com/robfig/revel"
+import "github.com/ubik86/revel"
 
 type User struct {
 	Username        string

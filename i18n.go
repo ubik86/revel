@@ -2,7 +2,7 @@ package revel
 
 import (
 	"fmt"
-	"github.com/robfig/config"
+	"github.com/ubik86/config"
 	"os"
 	"path/filepath"
 	"regexp"

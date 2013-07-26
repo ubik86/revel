@@ -32,12 +32,12 @@ forked project **will not work**.
 Instead, this is the recommended way:
 
 1. Fork Revel project on Github
-2. In your clone of github.com/robfig/revel, add your fork as a remote.
+2. In your clone of github.com/ubik86/revel, add your fork as a remote.
 3. Push to your fork to prepare a pull request.
 
 Here is the command line: 
 ```
-$ cd $GOPATH/src/github.com/robfig/revel              # Change directory to revel repo
+$ cd $GOPATH/src/github.com/ubik86/revel              # Change directory to revel repo
 $ git remote add fork git@github.com:$USER/revel.git  # Add your fork as a remote
 $ git push fork master                                # After new commits, push to your fork
 $ git pull origin master                              # Optionally, merge new changes from upstream
@@ -64,10 +64,10 @@ Benchmarks are helpful but not required.
 
 Typically running the main set of unit tests will be sufficient:
 
-	$ go test github.com/robfig/revel
+	$ go test github.com/ubik86/revel
 
 Refer to the
-[Travis configuration](https://github.com/robfig/revel/blob/master/.travis.yml)
+[Travis configuration](https://github.com/ubik86/revel/blob/master/.travis.yml)
 for the full set of tests.  They take less than a minute to run.
 
 ### Document your feature
@@ -97,7 +97,7 @@ Any changes you make to the site should be reflected within a few seconds.
 
 These are outstanding feature requests, roughly ordered by priority.
 Additionally, there are frequently smaller feature requests or items in the
-[issues](https://github.com/robfig/revel/issues?labels=contributor+ready&page=1&state=open).
+[issues](https://github.com/ubik86/revel/issues?labels=contributor+ready&page=1&state=open).
 
 1.  Better ORM support.  Provide more samples (or modules) and better documentation for setting up common situations like SQL database, Mongo, LevelDB, etc.
 2.	Support for other templating languages (e.g. mustache, HAML).  Make TemplateLoader pluggable.  Use Pongo instead of vanilla Go templates (and update the samples)

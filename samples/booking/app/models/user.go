@@ -2,7 +2,7 @@ package models
 
 import (
 	"fmt"
-	"github.com/robfig/revel"
+	"github.com/ubik86/revel"
 	"regexp"
 )
 

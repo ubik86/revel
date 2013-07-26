@@ -2,7 +2,7 @@ package revel
 
 import (
 	"errors"
-	"github.com/robfig/config"
+	"github.com/ubik86/config"
 	"path"
 	"strings"
 )

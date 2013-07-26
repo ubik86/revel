@@ -2,8 +2,8 @@ package cache
 
 import (
 	"fmt"
-	"github.com/robfig/go-cache"
-	"github.com/robfig/revel"
+	"github.com/ubik86/go-cache"
+	"github.com/ubik86/revel"
 	"reflect"
 	"time"
 )

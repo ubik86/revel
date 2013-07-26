@@ -5,9 +5,9 @@ import (
 	"database/sql"
 	"github.com/coopernurse/gorp"
 	_ "github.com/mattn/go-sqlite3"
-	r "github.com/robfig/revel"
-	"github.com/robfig/revel/modules/db/app"
-	"github.com/robfig/revel/samples/booking/app/models"
+	r "github.com/ubik86/revel"
+	"github.com/ubik86/revel/modules/db/app"
+	"github.com/ubik86/revel/samples/booking/app/models"
 )
 
 var (

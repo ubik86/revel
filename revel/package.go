@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/robfig/revel"
+	"github.com/ubik86/revel"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -17,7 +17,7 @@ This allows it to be deployed and run on a machine that lacks a Go installation.
 
 For example:
 
-    revel package github.com/robfig/revel/samples/chat
+    revel package github.com/ubik86/revel/samples/chat
 `,
 }
 

@@ -11,7 +11,7 @@ package db
 
 import (
 	"database/sql"
-	"github.com/robfig/revel"
+	"github.com/ubik86/revel"
 )
 
 var (
